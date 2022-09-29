@@ -25,20 +25,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcular(View view) {
         //comprobamos si se ha metido algun numero para poder calcular
-        if(num1.getText().toString().isEmpty()&&num2.getText().toString().isEmpty()){
+        if(num1.getText().toString().isEmpty()||num2.getText().toString().isEmpty()){
             result.setText("No has introducido numeros");
         }else {
-
+            // Obtenemos los números
+            int n1=Integer.parseInt(num1.getText().toString());
+            int n2=Integer.parseInt(num2.getText().toString());
+            if (view.getId() == R.id.bsuma) {
+                // Hacemos la suma establecemos el resultado en el TextView
+                result.setText(""+(n1+n2));
+            }
+            if (view.getId() == R.id.bresta) {
+                // Hacemos la resta establecemos el resultado en el TextView
+                result.setText(""+(n1-n2));
+            }
+            if (view.getId() == R.id.bmultiplicar) {
+                // Hacemos la multiplicacion establecemos el resultado en el TextView
+                result.setText(""+(n1*n2));
+            }
+            if (view.getId() == R.id.bdivision) {
+                // Hacemos la division establecemos el resultado en el TextView
+                if(n2==0) result.setText("No se puede dividir entre 0");
+                else result.setText("" + (n1 / n2));
+            }
         }
-
-        // Obtenemos los números
-        //int n1=Integer.parseInt(num1.getText().toString());
-        //int n2=Integer.parseInt(num2.getText().toString());
-
-        // Hacemos la suma
-        //int suma=n1+n2;
-
-        // Establecemos el resultado en el TextView
-        //result.setText(""+suma);
     }
 }
