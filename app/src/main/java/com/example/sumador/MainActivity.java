@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(""+(n1*n2));
             }
             if (view.getId() == R.id.bdivision) {
-                // Hacemos la division establecemos el resultado en el TextView
+                // Comprbamos la division por 0 Hacemos la division establecemos el resultado en el TextView
                 if(n2==0) result.setText("No se puede dividir entre 0");
                 else result.setText("" + (n1 / n2));
             }
